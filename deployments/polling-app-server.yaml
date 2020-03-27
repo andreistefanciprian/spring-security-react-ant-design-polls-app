@@ -17,6 +17,7 @@ spec:
       containers:
       - name: polling-app-server
         image: callicoder/polling-app-server:1.0.0
+#        image: spring-security-react-ant-design-polls-app_app-server
         imagePullPolicy: IfNotPresent
         ports:
           - name: http
