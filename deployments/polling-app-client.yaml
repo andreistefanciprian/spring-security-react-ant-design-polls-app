@@ -15,7 +15,11 @@ spec:
       containers:
       - name: polling-app-client
         image: callicoder/polling-app-client:1.0.0
+#        image: spring-security-react-ant-design-polls-app_app-client:latest
         imagePullPolicy: IfNotPresent
+        env:
+          - name: REACT_APP_API_BASE_URL
+            value: http://polling-app-server:8080/api
         ports:
           - name: http
             containerPort: 80   # Should match the Port that the container listens on
@@ -36,3 +40,4 @@ spec:
   - name: http
     port: 80
     targetPort: 80
+    nodePort: 30080
